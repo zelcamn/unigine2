@@ -8,38 +8,42 @@
 namespace gamens
 {
 
-Q_NAMESPACE
+    Q_NAMESPACE
 
-enum class Variants
-{
-    Rock,
-    Paper,
-    Scissors
-};
+    // Перечисление вариантов игры
+    enum class Variants
+    {
+        Rock,
+        Paper,
+        Scissors
+    };
 
-Q_ENUM_NS(Variants)
+    Q_ENUM_NS(Variants)
 
-class Game : public QObject
-{
-    Q_OBJECT
-private:
-    Variants chosenVariant = Variants::Rock;
-    bool isReady = false;
-    QString resultText = " ";
+    // Класс "игры"
+    class Game : public QObject
+    {
+        Q_OBJECT
+    private:
+        // Выбранный вариант и готовность к игре
+        Variants chosenVariant = Variants::Rock;
+        bool isReady = false;
 
-public:
-    Q_INVOKABLE void proceed_game(bool isEnemyReady, int enemyChoice);
-    bool compare_variants(int enemyChoice);
+        // Текст результата игры
+        QString resultText = " ";
 
-    bool get_is_ready();
-    void set_is_ready(bool isReady);
+    public:
+        Q_INVOKABLE void proceed_game(bool isEnemyReady, int enemyChoice);
+        bool compare_variants(int enemyChoice);
 
-    Variants get_chosenVariant();
-    void set_chosenVariant(Variants variant);
+        bool get_is_ready();
+        void set_is_ready(bool isReady);
 
-    QString get_resultText();
+        Variants get_chosenVariant();
+        void set_chosenVariant(Variants variant);
 
-};
+        QString get_resultText();
+    };
 }
 
 Q_DECLARE_METATYPE(gamens::Variants)

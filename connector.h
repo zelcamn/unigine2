@@ -22,6 +22,7 @@ namespace web
 
         bool isConnected = false;
 
+        // данные, полученные от другого игрока
         bool receivedIsReady = false;
         int receivedVariant = 0;
 
@@ -34,7 +35,7 @@ namespace web
     public:
         void connect_to_server(QString peerIP, int peerPort);
 
-        // инциализация сервера и подключение к удаленному узлу
+        // инциализация сервера и подключение к другому игроку
         bool instatiate(int listenPort, QString peerIP, int peerPort);
 
         // отправка данных: готовность и выбранный вариант
