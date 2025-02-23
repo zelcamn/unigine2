@@ -8,11 +8,13 @@
 #include <QSpinBox>
 
 QT_BEGIN_NAMESPACE
-namespace Ui {
-class PaperRockScissors;
+namespace Ui
+{
+    class PaperRockScissors;
 }
 QT_END_NAMESPACE
 
+// класс главного окна
 class PaperRockScissors : public QMainWindow
 {
     Q_OBJECT
@@ -21,18 +23,22 @@ public:
     PaperRockScissors(QWidget *parent = nullptr);
     ~PaperRockScissors();
 
-    QPushButton* getRockBtn();
-    QPushButton* getPaperBtn();
-    QPushButton* getScissorsBtn();
-    QPushButton* getReadyBtn();
-    QPushButton* getConnectBtn();
+    // методы для получения указателей на кнопки
+    QPushButton *getRockBtn();
+    QPushButton *getPaperBtn();
+    QPushButton *getScissorsBtn();
+    QPushButton *getReadyBtn();
+    QPushButton *getConnectBtn();
 
-    QLabel* getWinLoseLbl();
+    // метод для получения указателя на строку результатов
+    QLabel *getWinLoseLbl();
 
-    QLineEdit* getPeerIPLnEdit();
+    // метод для получения указателя на строку ввода IP другого игрока
+    QLineEdit *getPeerIPLnEdit();
 
-    QSpinBox* getLocalPortSpinBox();
-    QSpinBox* getPeerPortSpinBox();
+    // методы для получения указателей на спинбоксы портов игроков
+    QSpinBox *getLocalPortSpinBox();
+    QSpinBox *getPeerPortSpinBox();
 
 private:
     Ui::PaperRockScissors *ui;
